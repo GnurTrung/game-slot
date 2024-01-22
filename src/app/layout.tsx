@@ -1,5 +1,6 @@
 import { ApplicationProvider } from "@/context/useApplication";
 import "./globals.css";
+import { WebAppProvider } from "@vkruglikov/react-telegram-web-app";
 
 const title = "Xaitama";
 const desc = "Xaitama";
@@ -48,9 +49,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <ApplicationProvider>
-        <body>{children}</body>
-      </ApplicationProvider>
+      <WebAppProvider
+        options={{
+          smoothButtonsTransition: true,
+        }}
+      >
+        <ApplicationProvider>
+          <body>{children}</body>
+        </ApplicationProvider>
+      </WebAppProvider>
     </html>
   );
 }
