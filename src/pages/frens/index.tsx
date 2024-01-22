@@ -1,6 +1,10 @@
 "use client";
-import { BackButton } from "@vkruglikov/react-telegram-web-app";
+import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
+
+const BackButton = dynamic(() => import("@vkruglikov/react-telegram-web-app").then((mod) => mod.BackButton), {
+  ssr: false
+})
 
 const Frens = () => {
   const router = useRouter();
