@@ -1,3 +1,5 @@
+"use client"
+
 import { ApplicationProvider } from "@/context/useApplication";
 import "./globals.css";
 import { WebAppProvider } from "@vkruglikov/react-telegram-web-app";
