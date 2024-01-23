@@ -24,7 +24,7 @@ export function ApplicationProvider({ children }: any) {
       // toast.error(ex);
     }
   };
-  console.log(process.env.REACT_APP_API_URL, "9999");
+  toast.success(process.env.REACT_APP_API_URL, "9999");
   useEffect(() => {
     WebApp?.initDataUnsafe?.user?.id && handleGetPro5();
   }, [WebApp?.initDataUnsafe?.user?.id]);
