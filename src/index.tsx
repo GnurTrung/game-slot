@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 // import "./index.css";
-import Toaster from "react-hot-toast";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ApplicationProvider } from "./contexts/useApplication";
+import { Toaster } from "react-hot-toast";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
