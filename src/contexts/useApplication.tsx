@@ -19,7 +19,7 @@ export function ApplicationProvider({ children }: any) {
       };
       const res = await getUserProfile(params);
       setPro5(res?.data);
-      toast.success("User profile: ");
+      toast.success("User profile: " + WebApp?.initDataUnsafe?.user?.id);
     } catch (ex) {
       // toast.error(ex);
     }
