@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 import { getUserProfile } from "../services/profile";
 import { useWebApp } from "../hooks";
 
-export const ApplicationContext = createContext(null);
+export const ApplicationContext = createContext({} as any);
 export const useApplicationContext = () => useContext(ApplicationContext);
 
 export function ApplicationProvider({ children }: any) {
@@ -35,6 +35,7 @@ export function ApplicationProvider({ children }: any) {
         {
           pro5,
           setPro5,
+          WebApp,
         } as any
       }
     >

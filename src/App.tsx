@@ -1,10 +1,9 @@
-import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import { useWebApp } from "./hooks";
+import { useApplicationContext } from "./contexts/useApplication";
+import logo from "./logo.svg";
 
 function App() {
-  const { WebApp } = useWebApp();
+  const { WebApp } = useApplicationContext();
   return (
     <div className="App">
       <header className="App-header">
