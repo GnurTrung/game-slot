@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 
 export const getUserProfile = async ({ ...params }) => {
-  const url = `/user/get-user`;
+  const url = `${process.env.REACT_APP_API_URL}/user/get-user`;
+  toast.success(url);
   return await axios.get(url, { params });
 };
