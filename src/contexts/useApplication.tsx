@@ -8,6 +8,7 @@ export const useApplicationContext = () => useContext(ApplicationContext);
 
 export function ApplicationProvider({ children }: any) {
   const [pro5, setPro5] = useState<any>({});
+  const [pro5Data, setPro5Data] = useState<any>({});
   const WebApp = useWebApp();
   const handleGetPro5 = async () => {
     try {
@@ -19,9 +20,11 @@ export function ApplicationProvider({ children }: any) {
       };
       const res = await getUserProfile(params);
       if (res?.data) {
-        toast.success("User profile: " + WebApp?.initDataUnsafe?.user?.id);
+        toast.success("User profile: " + res?.data?.prop?.energy);
+        toast.error("User profile: " + res?.data?.data?.prop?.energy);
+        setPro5(res?.data?.prop);
+        setPro5Data(res?.data?.data?.prop);
       }
-      // setPro5(res?.data);
     } catch (ex) {
       // toast.error(ex);
     }
@@ -37,6 +40,7 @@ export function ApplicationProvider({ children }: any) {
           pro5,
           setPro5,
           WebApp,
+          pro5Data, setPro5Data
         } as any
       }
     >

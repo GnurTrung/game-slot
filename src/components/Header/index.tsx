@@ -1,16 +1,19 @@
+import { useApplicationContext } from "../../contexts/useApplication";
+
 const Header = () => {
+  const {pro5,pro5Data, WebApp} = useApplicationContext()
   const menu = [
     {
       img: "/images/header/xai_token.png",
-      amount: "100",
+      amount: WebApp?.initDataUnsafe?.user?.id,
     },
     {
       img: "/images/header/xaitama_token.png",
-      amount: "100",
+      amount: pro5?.energy,
     },
     {
       img: "/images/header/power.png",
-      amount: "100",
+      amount: pro5Data?.energy,
     },
   ];
 
